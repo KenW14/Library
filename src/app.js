@@ -1,6 +1,7 @@
 const express = require('express');
 const bookRoutes = require('./routes/bookRoutes');
 const memberRoutes = require('./routes/memberRoutes.js');
+const db = require('./config/database.js');
 // const borrowingRoutes = require('./routes/borrowingRoutes');
 
 const app = express();
@@ -9,6 +10,8 @@ app.use(express.json());
 // Gunakan routes
 app.use('/api/books', bookRoutes);
 app.use("/api/members", memberRoutes);
+
+db.connect();
 // app.use("/api/borrowings", borrowingRoutes);
 
 
