@@ -1,10 +1,8 @@
-// Member Routes 
-// Borrowing Routes 
 const express = require('express');
 const router = express.Router();
-const bookController = require('../controllers/memberController');
 
-// Mendefinisikan endpoint GET /books
-router.get('/', memberController.getBooks);
+const member_controller = require('../controllers/memberController');
+
+router.post("/", member_controller.register_member);
 
 module.exports = router;
